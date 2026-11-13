@@ -1,0 +1,9 @@
+opencollection: 1.0.0
+info:
+  name: "04 - Bookings"
+  type: folder
+  seq: 4
+http:
+  headers:
+    - name: Accept
+      value: application/json

@@ -1,0 +1,38 @@
+opencollection: 1.0.0
+info:
+  name: Local
+  type: environment
+variables:
+  - name: baseUrl
+    value: "http://localhost:3000"
+    secret: false
+  - name: clientEmail
+    value: "cliente@bulir.ao"
+    secret: false
+  - name: clientNif
+    value: "004567890LA042"
+    secret: false
+  - name: clientPassword
+    value: "segura123"
+    secret: false
+  - name: providerEmail
+    value: "prestador@bulir.ao"
+    secret: false
+  - name: providerNif
+    value: "500123456LA010"
+    secret: false
+  - name: providerPassword
+    value: "segura123"
+    secret: false
+  - name: clientToken
+    value: ""
+    secret: true
+  - name: providerToken
+    value: ""
+    secret: true
+  - name: serviceId
+    value: ""
+    secret: false
+  - name: bookingId
+    value: ""
+    secret: false

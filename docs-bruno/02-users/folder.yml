@@ -1,0 +1,9 @@
+opencollection: 1.0.0
+info:
+  name: "02 - Users"
+  type: folder
+  seq: 2
+http:
+  headers:
+    - name: Accept
+      value: application/json

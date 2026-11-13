@@ -1,0 +1,18 @@
+opencollection: 1.0.0
+info:
+  name: "Cancel Booking (Client)"
+  type: http
+  seq: 4
+
+http:
+  method: PATCH
+  url: "{{baseUrl}}/bookings/{{bookingId}}/cancel"
+  auth:
+    type: bearer
+    token: "{{clientToken}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

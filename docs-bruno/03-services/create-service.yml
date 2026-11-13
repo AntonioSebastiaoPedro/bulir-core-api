@@ -1,0 +1,38 @@
+opencollection: 1.0.0
+info:
+  name: "Create Service (Provider)"
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{baseUrl}}/services"
+  headers:
+    - name: Content-Type
+      value: application/json
+  auth:
+    type: bearer
+    token: "{{providerToken}}"
+  body:
+    type: json
+    data: |-
+      {
+        "name": "Consultoria de Arquitetura",
+        "description": "Sessão de 1 hora de revisão arquitetural",
+        "price": 1500
+      }
+
+runtime:
+  scripts:
+    - type: after-response
+      code: |-
+        if ((res.status === 200 || res.status === 201) && res.body?.data?.id) {
+          bru.setEnvVar("serviceId", res.body.data.id);
+          bru.setVar("serviceId", res.body.data.id);
+        }
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,9 @@
+opencollection: 1.0.0
+info:
+  name: "01 - Auth"
+  type: folder
+  seq: 1
+http:
+  headers:
+    - name: Accept
+      value: application/json

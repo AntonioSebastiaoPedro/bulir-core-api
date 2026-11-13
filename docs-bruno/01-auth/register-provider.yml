@@ -1,0 +1,28 @@
+opencollection: 1.0.0
+info:
+  name: "Register Provider"
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{baseUrl}}/auth/register"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "name": "João Prestador",
+        "nif": "{{providerNif}}",
+        "email": "{{providerEmail}}",
+        "password": "{{providerPassword}}",
+        "role": "PROVIDER"
+      }
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
