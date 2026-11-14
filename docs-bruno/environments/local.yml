@@ -9,7 +9,7 @@ variables:
   - name: clientPassword
     value: SenhaForte#2026
   - name: clientToken
-    value: ""
+    value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI0ZDIyNTc3Zi02YTBjLTQ3YzAtYTZjOC02MTI3MWI2N2E3ZDMiLCJyb2xlIjoiQ0xJRU5UIiwiaWF0IjoxNzk0NjQ5NzAzLCJleHAiOjE3OTQ3MzYxMDN9.ZKj-OyV8DIC7E6rvvSocpfoPi3EV7UTiTg-D6q41lbE
   - name: providerEmail
     value: prestador@bulir.ao
   - name: providerNif
