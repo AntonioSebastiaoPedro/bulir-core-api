@@ -1,7 +1,7 @@
 name: local
 variables:
   - name: baseUrl
-    value: http://localhost:3000
+    value: https://bulir-core-api.vercel.app
   - name: clientEmail
     value: cliente@bulir.ao
   - name: clientNif
