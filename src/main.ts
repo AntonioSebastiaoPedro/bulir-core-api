@@ -5,12 +5,15 @@ import { configureApp } from './app.setup.js';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule, {
-    instrument: ObserveInstrument,
+    instrument: process.env.OBSERVE_APP_KEY ? ObserveInstrument : undefined,
   });
 
   configureApp(app);
+  app.enableCors();
 
   const port = app.get(ConfigService).get<number>('port') ?? 3000;
   await app.listen(port);
+  console.log(`Bulir Core API listening on http://localhost:${port}`);
 }
+
 await bootstrap();

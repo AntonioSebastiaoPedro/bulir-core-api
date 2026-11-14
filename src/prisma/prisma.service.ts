@@ -10,13 +10,19 @@ export class PrismaService extends PrismaClient implements OnModuleInit, OnModul
       await this.$connect();
       this.logger.log('Conectado com sucesso ao banco PostgreSQL (Neon)!');
     } catch (error) {
-      this.logger.error('Erro ao conectar ao PostgreSQL:', error);
-      throw error;
+      this.logger.warn(
+        'Aviso: Conexão inicial com PostgreSQL adiada (o Prisma tentará na primeira requisição):',
+        error,
+      );
     }
   }
 
   async onModuleDestroy() {
-    await this.$disconnect();
-    this.logger.log('Conexão com PostgreSQL encerrada.');
+    try {
+      await this.$disconnect();
+      this.logger.log('Conexão com PostgreSQL encerrada.');
+    } catch (error) {
+      this.logger.warn('Erro ao desconectar do PostgreSQL:', error);
+    }
   }
 }

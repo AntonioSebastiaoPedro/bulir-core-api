@@ -5,20 +5,16 @@ variables:
   - name: clientEmail
     value: cliente@bulir.ao
   - name: clientNif
-    value: 004567890LA042
+    value: "5001234567"
   - name: clientPassword
-    value: segura123
+    value: SenhaForte#2026
+  - name: clientToken
+    value: ""
   - name: providerEmail
     value: prestador@bulir.ao
   - name: providerNif
-    value: 500123456LA010
+    value: "5009876543"
   - name: providerPassword
-    value: segura123
-  - secret: true
-    name: clientToken
-  - secret: true
-    name: providerToken
-  - name: serviceId
-    value: ""
-  - name: bookingId
+    value: SenhaForte#2026
+  - name: providerToken
     value: ""

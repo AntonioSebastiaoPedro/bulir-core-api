@@ -1,0 +1,20 @@
+name: production
+variables:
+  - name: baseUrl
+    value: https://bulir-core-api.vercel.app
+  - name: clientEmail
+    value: cliente@bulir.ao
+  - name: clientNif
+    value: "5001234567"
+  - name: clientPassword
+    value: SenhaForte#2026
+  - name: clientToken
+    value: ""
+  - name: providerEmail
+    value: prestador@bulir.ao
+  - name: providerNif
+    value: "5009876543"
+  - name: providerPassword
+    value: SenhaForte#2026
+  - name: providerToken
+    value: ""
