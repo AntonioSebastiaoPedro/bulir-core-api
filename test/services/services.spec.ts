@@ -59,7 +59,8 @@ describe('/services', () => {
         price: 45000,
         provider: { name: 'Carlos Mendes' },
       });
-      expect(res.body.data[0].provider).not.toHaveProperty('password');
+      // Só id e nome: e-mail e NIF do prestador não são expostos a outros utilizadores.
+      expect(res.body.data[0].provider).toEqual({ id: 'prov-1', name: 'Carlos Mendes' });
     });
 
     it('devolve 404 para um serviço inexistente', async () => {

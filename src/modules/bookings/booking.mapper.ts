@@ -1,20 +1,21 @@
 import { Booking, Prisma, User } from '@prisma/client';
 import {
   providerSelect,
+  PublicUser,
   ServiceResponse,
   ServiceWithProvider,
   toServiceResponse,
 } from '../services/service.mapper.js';
 
 export type BookingWithRelations = Booking & {
-  client: Pick<User, 'id' | 'name' | 'email' | 'nif'>;
+  client: Pick<User, 'id' | 'name'>;
   service: ServiceWithProvider;
 };
 
 export interface BookingResponse {
   id: string;
   clientId: string;
-  client: { id: string; name: string; email: string; nif: string };
+  client: PublicUser;
   serviceId: string;
   service: ServiceResponse;
   amount: number;
@@ -33,12 +34,7 @@ export function toBookingResponse(booking: BookingWithRelations): BookingRespons
   return {
     id: booking.id,
     clientId: booking.clientId,
-    client: {
-      id: booking.client.id,
-      name: booking.client.name,
-      email: booking.client.email,
-      nif: booking.client.nif,
-    },
+    client: { id: booking.client.id, name: booking.client.name },
     serviceId: booking.serviceId,
     service: toServiceResponse(booking.service),
     amount: booking.amount.toNumber(),

@@ -134,12 +134,7 @@ export function buildService(overrides: Record<string, unknown> = {}) {
     description: 'Diagnóstico e reparação completa',
     price: new Prisma.Decimal(45000),
     providerId: provider.id,
-    provider: {
-      id: provider.id,
-      name: provider.name,
-      email: provider.email,
-      nif: provider.nif,
-    },
+    provider: { id: provider.id, name: provider.name },
     createdAt: new Date('2026-02-01T00:00:00.000Z'),
     updatedAt: new Date('2026-02-01T00:00:00.000Z'),
     ...overrides,
@@ -151,7 +146,7 @@ export function buildBooking(overrides: Record<string, unknown> = {}) {
   return {
     id: BOOKING_ID,
     clientId: client.id,
-    client: { id: client.id, name: client.name, email: client.email, nif: client.nif },
+    client: { id: client.id, name: client.name },
     serviceId: SERVICE_ID,
     service: buildService(),
     amount: new Prisma.Decimal(45000),
