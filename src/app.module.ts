@@ -3,6 +3,7 @@ import { ConfigModule } from '@nestjs/config';
 import { createObserveModule } from '@nestjs/observe';
 import { envConfig } from './config/env.config.js';
 import { AuthModule } from './modules/auth/auth.module.js';
+import { ServicesModule } from './modules/services/services.module.js';
 import { UsersModule } from './modules/users/users.module.js';
 import { PrismaModule } from './prisma/prisma.module.js';
 import { AppController } from './app.controller.js';
@@ -17,6 +18,7 @@ const imports: Array<Type<unknown> | DynamicModule | Promise<DynamicModule> | Fo
   PrismaModule,
   UsersModule,
   AuthModule,
+  ServicesModule,
 ];
 
 if (process.env.OBSERVE_APP_KEY) {
